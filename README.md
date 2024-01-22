@@ -1,6 +1,6 @@
 # Overview
 
-This is the second iteration of Matthew's portfolio. Developed using React, Framer Motion, and Tailwind CSS.
+This is the second iteration of Matthew's portfolio website. Developed using [React](https://react.dev/), [Framer Motion](https://www.framer.com/motion/), and [Tailwind CSS](https://tailwindcss.com/).
 
 ## Installation & Set Up
 
