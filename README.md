@@ -5,7 +5,11 @@ This is the second iteration of Matthew's portfolio. Developed using React, Fram
 ## Installation & Set Up
 
 1. Install required packages
-```npm install```
+   ```sh
+   npm install
+   ```
 
 2. Start the development server
-```npm start```
+   ```sh
+   npm start
+   ```
