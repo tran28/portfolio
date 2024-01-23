@@ -1,4 +1,3 @@
-// components/Nav.js
 import { motion } from 'framer-motion';
 import { nav } from "../content/nav";
 import useCurrentSection from "../hooks/useCurrentSection";

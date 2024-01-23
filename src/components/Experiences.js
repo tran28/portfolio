@@ -24,7 +24,6 @@ function Experiences() {
                             technologies={experience.technologies} />
                     ))}
                 </ol>
-
             </div>
         </section>
     );

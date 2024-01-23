@@ -11,7 +11,7 @@ import StickyCursor from "./components/StickyCursor";
 function App() {
   return (
     <Layout>
-      <StickyCursor/>
+      <StickyCursor />
       {/* Left panel content */}
       <Header>
         <div>
@@ -22,10 +22,10 @@ function App() {
       </Header>
 
       {/* Right panel content */}
-      <Main>
-        <About />
-        <Experiences />
-      </Main>
+        <Main>
+          <About />
+          <Experiences />
+        </Main>
     </Layout>
   );
 }
