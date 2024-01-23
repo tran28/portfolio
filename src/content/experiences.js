@@ -1,0 +1,38 @@
+export const experiences = [
+    {
+        dateSpan: "Oct 2023 - Present",
+        titles: ["Software Engineer"],
+        company: "Susgrainable",
+        href: "https://susgrainable.com/",
+        description: "Review junior developer code, and maintain legacy code.",
+        skills: ["Code Review", "System Design"],
+        technologies: ["CSS", "Shopify Liquid"],
+    },
+    {
+        dateSpan: "Jan 2023 - Present",
+        titles: ["Web Development Instructor"],
+        company: "Lighthouse Labs",
+        href: "https://www.lighthouselabs.ca/",
+        description: "Provide learning instructions to 500+ students in modern web development technologies; topics covering fundamentals of Javascript, Python, HTML, CSS, React, Next.js, Node.js, Ruby on Rails, PostgreSQL, unit testing, Git.",
+        skills: ["Content Delivery"],
+        technologies: ["Javascript", "React", "PostgreSQL", "GitHub"],
+    },
+    {
+        dateSpan: "Aug 2021 - Apr 2023",
+        titles: ["Co-founder"],
+        company: "Heritude Inc.",
+        href: "https://yfile.news.yorku.ca/2020/04/29/startup-focused-on-supporting-indigenous-artisans-wins-pitch-competition-coveted-spot-in-bestlab/",
+        description: "Successfully launched first product offering in 2021 after conducting in-depth market and risk analysis, product positioning, and planning requirements; achieving break-even in 14 months.",
+        skills: ["Startup", "Business Management"],
+        technologies: [],
+    },
+    {
+        dateSpan: "Sep 2019 - Dec 2022",
+        titles: ["Lead Site Coordinator", "Operations Coordinator", "Finance Coordinator"],
+        company: "Let's Talk Science",
+        href: "https://letstalkscience.ca/",
+        description: "Led a team of three new coordinators and oversaw daily site operations. Effectively organized the annual symposium, fulfiled reporting duties to stakeholders, and wrote over 50 bug reports for the newly developed in-house volunteer portal.",
+        skills: ["Project Management"],
+        technologies: [],
+    },
+]
