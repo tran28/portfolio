@@ -1,5 +1,5 @@
 export const intro = { 
     name: "Matthew Tran",
     title: "Software Engineer",
-    tagline: "I like pretty things so I learn to make them."
+    tagline: 'Striving to create memorable digital experiences rather than "just another product".'
 }

@@ -1,5 +1,5 @@
 export const about = [
-    "Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and I’ve had the privilege of building software for an advertising agency, a start-up, a student-led design studio, and a huge corporation.",
-    "My main focus these days is building products and leading projects for our clients at Upstatement. In my free time I've also released an online video course that covers everything you need to know to build a web app with the Spotify API.",
-    "When I’m not at the computer, I’m usually rock climbing, hanging out with my wife and two cats, or running around Hyrule searching for Korok seeds."
+    "I've got a real knack for blending the worlds of people and products. It's super intriguing to see how, in a sea of endless options, certain products just click with folks. As a consumer, I've got an eye for what works, and as an engineer, I'm all about understanding different viewpoints to help companies realize their most awesome ideas.",
+    "My journey's taken me through the realms of software engineering and entrepreneurial studies, where I've had fun contributing to so many cool projects. I'm often found extending my master list of reusable components and keeping up with the latest in design trends.",
+    "Outside of tech, I love to travel the world - although I've been putting off editing my latest vlog for way too long! 🥲"
 ]
