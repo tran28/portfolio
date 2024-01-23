@@ -10,7 +10,7 @@ const useCurrentSection = (sections) => {
                     setCurrentSection(entry.target.id);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.7 });
 
         sections.forEach(sectionId => {
             const section = document.getElementById(sectionId);
