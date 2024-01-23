@@ -6,10 +6,12 @@ import Layout from "./components/Layout";
 import Links from "./components/Links";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
+import StickyCursor from "./components/StickyCursor";
 
 function App() {
   return (
     <Layout>
+      <StickyCursor/>
       {/* Left panel content */}
       <Header>
         <div>
