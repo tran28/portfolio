@@ -24,13 +24,13 @@ function Nav() {
                                 onClick={(e) => handleNavClick(e, targetId)}
                             >
                                 <motion.span
-                                    className="mr-4 h-px bg-slate-600"
-                                    initial={{ width: '28px' }}
+                                    className="mr-4 h-px"
+                                    initial={{ width: '28px', backgroundColor: '#475569' }}
                                     animate={{
                                         width: currentSection === targetId ? '56px' : '28px',
                                         backgroundColor: currentSection === targetId ? '#e2e8f0' : '#475569',
                                     }}
-                                    whileHover={{ width: '56px' }}
+                                    whileHover={{ width: '56px', backgroundColor: '#e2e8f0' }}
                                     transition={{ duration: 0.3 }}
                                 ></motion.span>
                                 <span
