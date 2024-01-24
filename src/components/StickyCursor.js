@@ -16,18 +16,24 @@ export default function StickyCursor() {
         y: useSpring(mouse.y, smoothOptions)
     }
 
-    const manageMouseMove = (e) => {
-        const { clientX, clientY } = e;
-        mouse.x.set(clientX - cursorSize / 2);
-        mouse.y.set(clientY - cursorSize / 2);
-    }
-
     useEffect(() => {
+        // Function to check if the screen width is larger than the mobile breakpoint
+        const isLargeScreen = () => window.innerWidth > 640;
+
+        // Modified event handler that only sets mouse position on large screens
+        const manageMouseMove = (e) => {
+            if (isLargeScreen()) {
+                const { clientX, clientY } = e;
+                mouse.x.set(clientX - cursorSize / 2);
+                mouse.y.set(clientY - cursorSize / 2);
+            }
+        }
+
         window.addEventListener("mousemove", manageMouseMove);
         return () => {
             window.removeEventListener("mousemove", manageMouseMove);
         }
-    })
+    }, [mouse.x, mouse.y])
 
     return (
         <motion.div
