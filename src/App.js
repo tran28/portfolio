@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import Links from "./components/Links";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
+import Projects from "./components/Projects";
 import StickyCursor from "./components/StickyCursor";
 
 function App() {
@@ -22,10 +23,11 @@ function App() {
       </Header>
 
       {/* Right panel content */}
-        <Main>
-          <About />
-          <Experiences />
-        </Main>
+      <Main>
+        <About />
+        <Experiences />
+        <Projects />
+      </Main>
     </Layout>
   );
 }
