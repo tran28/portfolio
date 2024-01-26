@@ -6,6 +6,6 @@
 
 @layer base {
   body {
-    @apply bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900
+    @apply bg-primary-dark leading-relaxed text-primary-dim antialiased selection:bg-accent-1 selection:text-accent-2
   }
 }

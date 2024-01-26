@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { nav } from "../content/nav";
 import useCurrentSection from "../hooks/useCurrentSection";
 import smoothScroll from '../utils/smoothScroll';
+import { colors } from '../styles/colors';
 
 function Nav() {
     const currentSection = useCurrentSection(nav.map(item => item.href.substring(1)));
@@ -25,17 +26,17 @@ function Nav() {
                             >
                                 <motion.span
                                     className="mr-4 h-px"
-                                    initial={{ width: '28px', backgroundColor: '#475569' }}
+                                    initial={{ width: '28px'}}
                                     animate={{
                                         width: currentSection === targetId ? '56px' : '28px',
-                                        backgroundColor: currentSection === targetId ? '#e2e8f0' : '#475569',
+                                        backgroundColor: currentSection === targetId ? colors.primary.bright : colors.primary.dim,
                                     }}
-                                    whileHover={{ width: '56px', backgroundColor: '#e2e8f0' }}
+                                    whileHover={{ width: '56px', backgroundColor: colors.primary.bright }}
                                     transition={{ duration: 0.3 }}
                                 ></motion.span>
                                 <span
-                                    className={`text-xs font-bold uppercase tracking-widest ml-2 ${currentSection === targetId ? 'text-slate-200' : 'text-slate-500'
-                                        } group-hover:text-slate-200 group-focus-visible:text-slate-200`}
+                                    className={`text-xs font-bold uppercase tracking-widest ml-2 ${currentSection === targetId ? 'text-primary-bright' : 'text-primary-dim'
+                                        } group-hover:text-primary-bright group-focus-visible:text-primary-bright`}
                                 >
                                     {item.label}
                                 </span>

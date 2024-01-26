@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { links } from "../content/links";
 import { getIcon } from "../utils/getIcon";
+import { colors } from '../styles/colors';
 
 function Links() {
     return (
@@ -13,7 +14,7 @@ function Links() {
                         rel="noreferrer noopener"
                         aria-label={`${link.label} (opens in a new tab)`}
                         title={link.label}
-                        whileHover={{ y: -2, scale: 1.1, color: '#e2e8f0'}}
+                        whileHover={{ y: -2, scale: 1.1, color: colors.primary.bright}}
                         whileTap={{ scale: 0.9 }}
                         className="block mx-1"
                     >
