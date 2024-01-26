@@ -1,35 +1,29 @@
-import image_speedymart from '../assets/image_speedymart.png'
-import pdf_speedymart_design_doc from '../assets/pdf_speedymart.pdf'
-import image_aim from '../assets/image_aim.png'
-import image_rico_naylor from '../assets/image_rico_naylor.png'
-import pdf_eng4000_final_report_aim from '../assets/pdf_eng4000_final_report_aim.pdf'
-
 export const projects = [
     {
-        image: image_speedymart,
+        image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_speedymart.png",
         title: "SpeedyMart",
         href: "https://speedymart.herokuapp.com/",
         links: {
             Github: "https://github.com/tran28/SpeedyMart",
-            PDF: pdf_speedymart_design_doc,
+            PDF: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/pdf_speedymart.pdf",
         },
         description: "Conceptualized and developed an e-commerce website as part of an e-commerce course final project (A+ grade).",
         technologies: ["React", "Express", "MongoDB", "AWS S3", "Heroku", "Jest"],
     },
     {
-        image: image_aim,
+        image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_aim.png",
         title: "AiM (Engineering Capstone)",
         href: "https://www.youtube.com/watch?v=7gM-D7A--6E",
         links: {
             Github: "https://github.com/tran28/AI_Learning_Platform-AiM",
             Youtube: "https://www.youtube.com/watch?v=7gM-D7A--6E",
-            PDF: pdf_eng4000_final_report_aim,
+            PDF: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/pdf_eng4000_final_report_aim.pdf",
         },
         description: "Developed a cloud-based AI e-learning solution using Google Natural Language and research studies from University of Toronto on gender bias in teaching.",
         technologies: ["React", "Express", "MySQL", "Google Cloud"],
     },
     {
-        image: image_rico_naylor,
+        image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_rico_naylor.png",
         title: "Rico Naylor Podcast Page",
         href: "https://riconaylor.com/",
         links: {
