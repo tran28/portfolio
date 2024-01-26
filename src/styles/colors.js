@@ -13,11 +13,11 @@ export const colors = {
         'hover-bg': '#1e293b',        // slate-800 - background when hovered on an item in a section
     },
     'skills': {
-        'bg': '#86efac',              // green-300 - background of skill tags
-        'text': '#4ade80',            // green-400 - text of skill tags
+        'bg': '#67e8f9',              // green-300 - background of skill tags
+        'text': '#22d3ee',            // green-400 - text of skill tags
     },
     'technologies': {
         'bg': '#5eead4',              // teal-300 - background of technology tags
-        'text': '#34d399',            // teal-400 - text of technology tags
+        'text': '#2dd4bf',            // teal-400 - text of technology tags
     },
 }
