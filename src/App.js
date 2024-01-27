@@ -1,4 +1,5 @@
 import About from "./components/About";
+import Accolades from "./components/Accolades";
 import Experiences from "./components/Experiences";
 import Header from "./components/Header";
 import Intro from "./components/Intro";
@@ -27,6 +28,7 @@ function App() {
         <About />
         <Experiences />
         <Projects />
+        <Accolades />
       </Main>
     </Layout>
   );

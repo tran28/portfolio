@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { FadeInWhenVisible } from './Animations';
-import { getIcon } from '../utils/getIcon';
 
-function Project({ image, title, href, links, description, technologies }) {
+function Accolade({ image, title, href, description }) {
     // Hover animation for the list
     const hoverAnimation = {
         scale: 1.02, // Slightly scale up on hover
@@ -34,38 +33,11 @@ function Project({ image, title, href, links, description, technologies }) {
 
                         {/* Description */}
                         <p className="mt-2 text-sm leading-normal">{description}</p>
-
-                        {/* Links */}
-                        {Object.keys(links).length > 0 &&
-                            <ul className="mt-2 flex flex-wrap" aria-label="Relevant links">
-                                {Object.entries(links).map(([label, url], index) => (
-                                    <li key={index} className="mr-2 mt-2">
-                                        <a className="relative inline-flex items-center text-sm font-medium text-slate-300 hover:text-accent-1 focus-visible:text-accent-1" href={url} target="_blank" rel="noreferrer noopener" aria-label={`${label} (opens in a new tab)`}>
-                                            {getIcon(label, { size: 32, stroke: 1 })}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        }
-
-                        {/* Technologies */}
-                        {technologies.length > 0 &&
-                            <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                {technologies.map((technology, index) => (
-                                    <li key={index} className="mr-1.5 mt-2">
-                                        <div className="flex items-center rounded-full bg-technologies-bg/10 px-3 py-1 text-xs font-medium leading-5 text-technologies-text ">
-                                            {technology}
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        }
                     </div>
-
                 </div>
             </motion.li>
         </FadeInWhenVisible>
     );
 }
 
-export default Project;
+export default Accolade;
