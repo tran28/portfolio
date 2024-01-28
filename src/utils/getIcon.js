@@ -1,4 +1,4 @@
-import { IconBrandGithub, IconBrandLinkedin, IconMail, IconBrandYoutube, IconFileTypePdf} from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin, IconMail, IconBrandYoutube, IconFileTypePdf, IconFilePencil} from "@tabler/icons-react";
 
 export const getIcon = (label, { color, size, stroke }) => {
     const icons = {
@@ -6,7 +6,8 @@ export const getIcon = (label, { color, size, stroke }) => {
         'linkedin': <IconBrandLinkedin color={color} size={size} stroke={stroke} />,
         'email': <IconMail color={color} size={size} stroke={stroke} />,
         'youtube': <IconBrandYoutube color={color} size={size} stroke={stroke} />,
-        'pdf': <IconFileTypePdf color={color} size={size} stroke={stroke} />
+        'pdf': <IconFileTypePdf color={color} size={size} stroke={stroke} />,
+        'uml': <IconFilePencil color={color} size={size} stroke={stroke} />,
     };
 
     return icons[label.toLowerCase()] || null; // Returns the icon or null if not found

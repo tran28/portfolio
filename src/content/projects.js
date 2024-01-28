@@ -1,7 +1,7 @@
 export const projects = [
     {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_speedymart.png",
-        title: "SpeedyMart",
+        title: "SpeedyMart (E-commerce)",
         href: "https://speedymart.herokuapp.com/",
         links: {
             Github: "https://github.com/tran28/SpeedyMart",
@@ -31,5 +31,17 @@ export const projects = [
         },
         description: "Developed a personal brand/podcast page for graduate surveyor at JLL (Manchester, UK). Designed logo using Illustrator, animated using Framer Motion.",
         technologies: ["Next.js", "Framer Motion", "AWS S3", "Illustrator"],
+    },
+    {
+        image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/VideoCoSystem.png",
+        title: "VideoCoSystem (Software Design)",
+        href: "https://www.youtube.com/watch?v=HsA7-JrNYWM",
+        links: {
+            Github: "https://github.com/tran28/EECS3311_FinalProject",
+            Youtube: "https://www.youtube.com/watch?v=HsA7-JrNYWM",
+            UML: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/VideoCoSystem_UML.png"
+        },
+        description: "Developed a personal brand/podcast page for graduate surveyor at JLL (Manchester, UK). Designed logo using Illustrator, animated using Framer Motion.",
+        technologies: ["Java", "Gradle", "JavaFX", "UML"],
     },
 ]
