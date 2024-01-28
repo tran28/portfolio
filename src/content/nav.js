@@ -11,4 +11,8 @@ export const nav = [
         label: "Projects",
         href: "#projects",
     },
+    {
+        label: "Accolades",
+        href: "#accolades",
+    },
 ]

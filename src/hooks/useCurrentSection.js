@@ -16,7 +16,7 @@ const useCurrentSection = (sections) => {
                     setCurrentSection(entry.target.id);
                 }
             });
-        }, { threshold: 0.8 }); // Configuring the observer to trigger when 70% of a section is in view
+        }, { threshold: 0.65 }); // Configuring the observer to trigger when 70% of a section is in view
 
         // Observing each section passed to the hook
         sections.forEach(sectionId => {

@@ -15,6 +15,6 @@ export const accolades = [
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/LinkedIn_Learning.png",
         title: "LinkedIn Learning Champions Program",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:6671069468921208832/",
-        description: "Completion of the LinkedIn Learning Champions program, mentored by Jennifer Catello, Enterprise Account Executive at LinkedIn",
+        description: "Completion of the LinkedIn Learning Champions program, mentored by Jennifer Catello, Enterprise Account Executive at LinkedIn.",
     },
 ]

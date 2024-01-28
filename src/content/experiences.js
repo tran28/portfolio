@@ -5,8 +5,8 @@ export const experiences = [
         company: "Susgrainable",
         href: "https://susgrainable.com/",
         description: "Review junior developer code, and maintain legacy code.",
-        skills: ["Code Review", "System Design"],
-        technologies: ["Shopify Liquid"],
+        skills: ["Code Review", "System Design", "SEO"],
+        technologies: ["Shopify Liquid", "HTML", "CSS"],
     },
     {
         dateSpan: "Jan 2023 - Present",
@@ -15,7 +15,7 @@ export const experiences = [
         href: "https://www.lighthouselabs.ca/",
         description: "Provide learning instructions to 500+ students in modern web development technologies; topics covering fundamentals of Javascript, Python, HTML, CSS, React, Next.js, Node.js, Ruby on Rails, PostgreSQL, unit testing, and Git.",
         skills: ["Content Delivery"],
-        technologies: ["Javascript", "React", "PostgreSQL", "GitHub"],
+        technologies: ["Javascript", "React", "Bootstrap", "TailwindCSS", "Mocha/Chai", "PostgreSQL", "GitHub"],
     },
     {
         dateSpan: "Aug 2021 - Apr 2023",
@@ -24,7 +24,7 @@ export const experiences = [
         href: "https://yfile.news.yorku.ca/2020/04/29/startup-focused-on-supporting-indigenous-artisans-wins-pitch-competition-coveted-spot-in-bestlab/",
         description: "Successfully launched first product offering in 2021 after conducting in-depth market and risk analysis, product positioning, and planning requirements; achieving break-even in 14 months.",
         skills: ["Startup", "Business Management"],
-        technologies: [],
+        technologies: ["Shopify", "Amazon FBA"],
     },
     {
         dateSpan: "Sep 2019 - Dec 2022",
@@ -32,7 +32,7 @@ export const experiences = [
         company: "Let's Talk Science",
         href: "https://letstalkscience.ca/",
         description: "Led a team of three new coordinators and oversaw daily site operations. Effectively organized the annual symposium, fulfiled reporting duties to stakeholders, and wrote over 50 bug reports for in-house volunteer portal.",
-        skills: ["Project Management"],
+        skills: ["Leadership", "Project Management"],
         technologies: ["Selenium", "Excel", "MailChimp Automation"],
     },
 ]
