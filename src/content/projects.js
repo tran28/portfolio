@@ -51,7 +51,7 @@ export const projects = [
             Youtube: "https://www.youtube.com/watch?v=HsA7-JrNYWM",
             UML: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/VideoCoSystem_UML.png"
         },
-        description: "Developed a personal brand/podcast page for graduate surveyor at JLL (Manchester, UK). Designed logo using Illustrator, animated using Framer Motion.",
+        description: "Designed and implemented movie ordering system for software design course final. Applied design by contract (DbC) principles and design patterns in OOP.",
         technologies: ["Java", "Gradle", "JavaFX", "UML"],
     },
 ]
