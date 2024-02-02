@@ -5,9 +5,10 @@ export const projects = [
         href: "https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design",
         links: {
             Figma: "https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design",
+            Github: "https://github.com/tran28/notif-project",
         },
         description: "Automated notification system for product discounts via text messages.",
-        technologies: ["Figma", "React", "AWS Lambda", "AWS SNS", "OpenAI", "Python"],
+        technologies: ["Figma", "React", "Amplify", "API Gateway", "Lambda", "DynamoDB", "SNS", "OpenAI", "Python"],
     },
     {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_speedymart.png",
