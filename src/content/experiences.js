@@ -4,7 +4,7 @@ export const experiences = [
         titles: ["Software Engineer"],
         company: "Susgrainable",
         href: "https://susgrainable.com/",
-        description: "Review junior developer code, and maintain legacy code.",
+        description: "Review associate developer code, and maintain legacy code.",
         skills: ["Code Review", "System Design", "SEO"],
         technologies: ["Shopify Liquid", "HTML", "CSS"],
     },
@@ -14,7 +14,7 @@ export const experiences = [
         company: "Lighthouse Labs",
         href: "https://www.lighthouselabs.ca/",
         description: "Provide learning instructions to 500+ students in modern web development technologies; topics covering fundamentals of Javascript, Python, HTML, CSS, React, Next.js, Node.js, Ruby on Rails, PostgreSQL, unit testing, and Git.",
-        skills: ["Content Delivery"],
+        skills: ["Web Development", "Content Delivery"],
         technologies: ["Javascript", "React", "Bootstrap", "TailwindCSS", "Mocha/Chai", "PostgreSQL", "GitHub"],
     },
     {
@@ -32,7 +32,7 @@ export const experiences = [
         company: "Let's Talk Science",
         href: "https://letstalkscience.ca/",
         description: "Led a team of three new coordinators and oversaw daily site operations. Effectively organized the annual symposium, fulfiled reporting duties to stakeholders, and wrote over 50 bug reports for in-house volunteer portal.",
-        skills: ["Leadership", "Project Management"],
-        technologies: ["Selenium", "Excel", "MailChimp Automation"],
+        skills: ["Leadership", "Project Management", "Documentation"],
+        technologies: ["Google Suite", "MailChimp Automation"],
     },
 ]

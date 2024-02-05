@@ -9,12 +9,12 @@ export const colors = {
     'primary': {
         'bright': '#e2e8f0',          // slate-200 - main text
         'dim': '#64748b',             // slate-500 - dimmer shade of main text
-        'dark': '#0f172a',            // slate-900 - main background
+        'dark': '#111827',            // slate-900 - main background
         'hover-bg': '#1e293b',        // slate-800 - background when hovered on an item in a section
     },
     'skills': {
-        'bg': '#67e8f9',              // green-300 - background of skill tags
-        'text': '#22d3ee',            // green-400 - text of skill tags
+        'bg': '#d1d5db',              // green-300 - background of skill tags
+        'text': '#9ca3af',            // green-400 - text of skill tags
     },
     'technologies': {
         'bg': '#5eead4',              // teal-300 - background of technology tags
