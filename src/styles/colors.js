@@ -17,7 +17,7 @@ export const colors = {
         'text': '#9ca3af',            // gray-400 - text of skill tags
     },
     'technologies': {
-        'bg': '#67e8f9',              // teal-300 - background of technology tags
-        'text': '#2dd4bf',            // teal-400 - text of technology tags
+        'bg': '#67e8f9',              // cyan-300 - background of technology tags
+        'text': '#22d3ee',            // cyan-400 - text of technology tags
     },
 }

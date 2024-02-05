@@ -18,7 +18,7 @@ function Links() {
                         whileTap={{ scale: 0.9 }}
                         className="block mx-1"
                     >
-                        {getIcon(link.label, { size: 36, stroke: 1.5 })}
+                        {getIcon(link.label, { size: 36, stroke: 1.2 })}
                     </motion.a>
                 </li>
             ))}
