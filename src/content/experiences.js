@@ -4,7 +4,7 @@ export const experiences = [
         titles: ["Software Engineer"],
         company: "Susgrainable",
         href: "https://susgrainable.com/",
-        description: "Review associate developer code, and maintain legacy code.",
+        description: "Review associate developer code, and maintain legacy code, focusing on optimizing responsive design for ecommerce store.",
         skills: ["Code Review", "System Design", "SEO"],
         technologies: ["Shopify Liquid", "HTML", "CSS"],
     },
