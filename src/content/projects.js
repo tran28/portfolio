@@ -2,7 +2,7 @@ export const projects = [
     {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_notifproject.png",
         title: "NotifProject (In-progress)",
-        href: "https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design",
+        href: "https://main.d2uxrrz05dtxm4.amplifyapp.com/",
         links: {
             Figma: "https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design",
             Github: "https://github.com/tran28/notif-project",
