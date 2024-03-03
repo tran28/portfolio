@@ -13,7 +13,7 @@ export const experiences = [
         titles: ["Software Engineer"],
         company: "Susgrainable",
         href: "https://susgrainable.com/",
-        description: "Collaborated with associate developer to optimize Shopify code with emphasis on responsive design and documenting legacy code.",
+        description: "Collaborated with associate developer to optimize Shopify site with emphasis on responsive design and documenting legacy code.",
         skills: ["System Design"],
         technologies: ["Shopify Liquid", "HTML", "CSS"],
     },
