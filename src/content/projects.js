@@ -1,14 +1,14 @@
 export const projects = [
     {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_notifproject.png",
-        title: "NotifProject (In-progress)",
+        title: "no•tif (In progress)",
         href: "https://main.d2uxrrz05dtxm4.amplifyapp.com/",
         links: {
-            Figma: "https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design",
             Github: "https://github.com/tran28/notif-project",
+            Figma: "https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design",
         },
         description: "Automated notification system for product discounts via text messages.",
-        technologies: ["Figma", "React", "Amplify", "API Gateway", "Lambda", "DynamoDB", "SNS", "OpenAI", "Python"],
+        technologies: ["Figma", "React", "Amplify", "API Gateway", "Lambda", "DynamoDB", "SNS", "OpenAI", "Python", "Tailwind CSS"],
     },
     {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_speedymart.png",
@@ -41,7 +41,7 @@ export const projects = [
             Github: "https://github.com/tran28/rico-naylor",
         },
         description: "Developed a personal brand/podcast page for previous graduate surveyor at JLL (Manchester, UK). Original logo design.",
-        technologies: ["Next.js", "AWS S3", "TailwindCSS", "Framer Motion", "Vercel", "Adobe Illustrator"],
+        technologies: ["Next.js", "AWS S3", "TailwindCSS", "Framer Motion", "Adobe Illustrator"],
     },
     {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/VideoCoSystem.png",
