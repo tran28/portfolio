@@ -11,19 +11,29 @@ export const projects = [
         technologies: ["Figma", "React", "Amplify", "API Gateway", "Lambda", "DynamoDB", "SNS", "OpenAI", "Python", "Tailwind CSS"],
     },
     {
+        image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_nicehairsalon.png",
+        title: "Nice Hair Salon",
+        href: "https://nicehairsalon.netlify.app/",
+        links: {
+            Github: "https://github.com/tran28/nice-hair-salon",
+        },
+        description: "Designed and developed a store landing page for Nice Hair Salon.",
+        technologies: ["Next.js", "TailwindCSS", "Typescript"],
+    },
+    {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_speedymart.png",
-        title: "SpeedyMart (E-commerce)",
+        title: "SpeedyMart (E-commerce Course)",
         href: "https://speedymart.herokuapp.com/",
         links: {
             Github: "https://github.com/tran28/SpeedyMart",
             PDF: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/pdf_speedymart.pdf",
         },
-        description: "Conceptualized and developed an e-commerce website as part of an e-commerce course final project.",
+        description: "Conceptualized and developed a convenience store website for e-commerce course final.",
         technologies: ["React", "Express", "MongoDB", "AWS S3", "Heroku", "Jest"],
     },
     {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_aim.png",
-        title: "AiM (Engineering Capstone)",
+        title: "AiM (Engineering Capstone Course)",
         href: "https://www.youtube.com/watch?v=7gM-D7A--6E",
         links: {
             Github: "https://github.com/tran28/AI_Learning_Platform-AiM",
@@ -34,18 +44,8 @@ export const projects = [
         technologies: ["React", "Express", "MySQL", "GCP Natural Language API"],
     },
     {
-        image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_rico_naylor.png",
-        title: "Rico Naylor Personal Website",
-        href: "https://riconaylor.com/",
-        links: {
-            Github: "https://github.com/tran28/rico-naylor",
-        },
-        description: "Developed a personal brand/podcast page for previous graduate surveyor at JLL (Manchester, UK). Original logo design.",
-        technologies: ["Next.js", "AWS S3", "TailwindCSS", "Framer Motion", "Adobe Illustrator"],
-    },
-    {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/VideoCoSystem.png",
-        title: "VideoCoSystem (Software Design)",
+        title: "VideoCoSystem (Software Design Course)",
         href: "https://www.youtube.com/watch?v=HsA7-JrNYWM",
         links: {
             Github: "https://github.com/tran28/EECS3311_FinalProject",
