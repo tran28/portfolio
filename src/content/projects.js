@@ -13,7 +13,7 @@ export const projects = [
     {
         image: "https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_nicehairsalon.png",
         title: "Nice Hair Salon",
-        href: "https://nicehairsalon.netlify.app/",
+        href: "https://nicehairsalon.ca/",
         links: {
             Github: "https://github.com/tran28/nice-hair-salon",
         },
