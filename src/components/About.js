@@ -1,4 +1,5 @@
 import { about } from "../content/about";
+import { addLinkToParagraph } from "../utils/addLinkToParagraph";
 
 function About() {
     return (
@@ -12,8 +13,9 @@ function About() {
             <div>
                 {about.map((paragraph, index, arr) => (
                     <p key={index} className={arr.length - 1 !== index ? "mb-4" : ""}>
-                        {paragraph}
+                        {addLinkToParagraph('vlog', paragraph, "https://www.youtube.com/watch?v=Wv6XGVzjZrU")}
                     </p>
+
                 ))}
             </div>
         </section>
