@@ -1,41 +1,60 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { useScroll } from "framer-motion";
 
-// Custom hook for tracking the current section in view
-const useCurrentSection = (sections) => {
-    // State to store the ID of the current section in view
-    const [currentSection, setCurrentSection] = useState('');
+const useCurrentSection = (sections, firstSectionOffset = 0.6) => {
+  const [currentSection, setCurrentSection] = useState("");
+  const { scrollY } = useScroll();
 
-    // useEffect hook to set up and clean up the IntersectionObserver
-    useEffect(() => {
-        // Creating an IntersectionObserver instance which will observe
-        // when different sections intersect with the viewport
-        const observer = new IntersectionObserver((entries) => {
-            // Callback for when observed elements' intersection status changes
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setCurrentSection(entry.target.id);
-                }
-            });
-        }, { threshold: 0.65 }); // Configuring the observer to trigger when 70% of a section is in view
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewportHeight = window.innerHeight;
+      const scrollPosition = scrollY.get();
 
-        // Observing each section passed to the hook
-        sections.forEach(sectionId => {
-            const section = document.getElementById(sectionId);
-            // Only observe the section if it exists
-            if (section) observer.observe(section);
-        });
+      const firstSection = document.getElementById(sections[0]);
+      if (firstSection) {
+        const firstSectionHeight = firstSection.offsetHeight;
+        const firstSectionBottom = firstSection.offsetTop + firstSectionHeight;
+        const offsetThreshold = firstSectionBottom * firstSectionOffset;
 
-        // Cleanup function to unobserve all sections on component unmount
-        return () => {
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (section) observer.unobserve(section);
-            });
-        };
-    }, [sections]);
+        // Check if we're within the offset range of the first section
+        if (scrollPosition <= offsetThreshold) {
+          setCurrentSection(sections[0]);
+          return;
+        }
+      }
 
-    // Returning the current section in view
-    return currentSection;
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const { offsetTop, offsetHeight } = section;
+          const sectionTop = offsetTop;
+          const sectionBottom = offsetTop + offsetHeight;
+
+          // Check if the middle of the viewport is within the section
+          if (
+            scrollPosition + viewportHeight / 2 >= sectionTop &&
+            scrollPosition + viewportHeight / 2 < sectionBottom
+          ) {
+            setCurrentSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    // Initial check
+    handleScroll();
+
+    // Set up subscription to scrollY changes
+    const unsubscribeScroll = scrollY.on("change", handleScroll);
+
+    // Cleanup
+    return () => {
+      unsubscribeScroll();
+    };
+  }, [sections, scrollY, firstSectionOffset]);
+
+  return currentSection;
 };
 
 export default useCurrentSection;
