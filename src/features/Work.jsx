@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Section } from '../components/ui/Section';
 import { Reveal } from '../components/anim/Reveal';
 import { Arrow } from '../components/ui/Arrow';
@@ -27,6 +27,7 @@ export function Work() {
               index={i}
               isOpen={openIndex === i}
               onOpen={() => setOpenIndex(i)}
+              onToggle={() => setOpenIndex(openIndex === i ? -1 : i)}
             />
           ))}
         </ol>
@@ -35,36 +36,50 @@ export function Work() {
   );
 }
 
-function isCoarsePointer() {
-  if (typeof window === 'undefined') return false;
-  return window.matchMedia('(pointer: coarse)').matches;
+function useCoarsePointer() {
+  const [coarse, setCoarse] = useState(false);
+  useEffect(() => {
+    const mql = window.matchMedia('(pointer: coarse)');
+    const update = () => setCoarse(mql.matches);
+    update();
+    mql.addEventListener('change', update);
+    return () => mql.removeEventListener('change', update);
+  }, []);
+  return coarse;
 }
 
-function ExperienceRow({ exp, index, isOpen, onOpen }) {
-  // On touch devices, a tap on a closed row opens it (no navigation).
-  // A tap on an already-open row follows the link.
-  const handleClick = (e) => {
-    if (isCoarsePointer() && !isOpen) {
-      e.preventDefault();
-      onOpen();
-    }
-  };
+function ExperienceRow({ exp, index, isOpen, onOpen, onToggle }) {
+  const coarse = useCoarsePointer();
+
+  /**
+   * Touch (coarse pointer): the row is a <button> that toggles open/closed.
+   * The "Visit ↗" link inside the expanded body handles navigation.
+   *
+   * Mouse (fine pointer): the row is an <a> that opens the link on click.
+   * Hover/focus expands the row (existing behavior).
+   */
+  const rowProps = coarse
+    ? { as: 'button', type: 'button', onClick: onToggle, 'aria-expanded': isOpen }
+    : {
+        as: 'a',
+        href: exp.href,
+        target: '_blank',
+        rel: 'noreferrer noopener',
+        'data-cursor': 'visit',
+        onMouseEnter: onOpen,
+        onFocus: onOpen,
+        'aria-expanded': isOpen,
+        'aria-label': `${exp.company} (opens in new tab)`,
+      };
+  const { as: RowTag, ...rest } = rowProps;
 
   return (
     <Reveal as="li" delay={0.05 * index} amount={0.1}>
-      <a
-        href={exp.href}
-        target="_blank"
-        rel="noreferrer noopener"
-        data-cursor="visit"
-        onMouseEnter={onOpen}
-        onFocus={onOpen}
-        onClick={handleClick}
-        aria-expanded={isOpen}
-        aria-label={`${exp.company} (opens in new tab)`}
-        className="group/arrow hairline block border-t transition-colors"
+      <RowTag
+        {...rest}
+        className="group/arrow hairline block w-full border-t text-left transition-colors"
       >
-        <div className="flex items-baseline gap-4 py-6 text-left">
+        <div className="flex items-baseline gap-4 py-6">
           <span className="text-mono w-8 shrink-0 text-[10px] text-muted tabular-nums">
             {String(index + 1).padStart(2, '0')}
           </span>
@@ -75,7 +90,18 @@ function ExperienceRow({ exp, index, isOpen, onOpen }) {
             </span>
             <span className="text-mono inline-flex shrink-0 items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-muted">
               {exp.dateSpan}
-              <Arrow dir="ne" className="text-accent" />
+              {coarse ? (
+                <span
+                  aria-hidden="true"
+                  className={`text-accent transition-transform duration-300 ${
+                    isOpen ? 'rotate-45' : ''
+                  }`}
+                >
+                  +
+                </span>
+              ) : (
+                <Arrow dir="ne" className="text-accent" />
+              )}
             </span>
           </span>
         </div>
@@ -104,11 +130,23 @@ function ExperienceRow({ exp, index, isOpen, onOpen }) {
                     </li>
                   ))}
                 </ul>
+                {coarse && (
+                  <a
+                    href={exp.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="group/arrow link-underline mt-2 inline-flex items-center gap-2 self-start text-sm text-ink"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Visit {exp.company}
+                    <Arrow dir="ne" size={14} className="text-accent" />
+                  </a>
+                )}
               </div>
             </div>
           </div>
         </div>
-      </a>
+      </RowTag>
     </Reveal>
   );
 }
