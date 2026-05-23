@@ -1,37 +1,30 @@
 /** @type {import('tailwindcss').Config} */
-import { colors } from './src/styles/colors'
-const Inter = "Inter" // Google Font @import in index.css
+
+const withVar = (name) => `rgb(var(--${name}) / <alpha-value>)`;
 
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  darkMode: 'class',
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        inter: [Inter]
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
-        'cursor': colors.cursor,
-        'accent-1': colors['accent-1'],
-        'accent-2': colors['accent-2'],
-        'primary': {
-          'bright': colors.primary.bright,
-          'dim': colors.primary.dim,
-          'dark': colors.primary.dark,
-          'hover-bg': colors.primary['hover-bg'],
-        },
-        'skills': {
-          'bg': colors.skills.bg,
-          'text': colors.skills.text,
-        },
-        'technologies': {
-          'bg': colors.technologies.bg,
-          'text': colors.technologies.text,
-        },
+        paper: withVar('paper'),
+        surface: withVar('surface'),
+        ink: withVar('ink'),
+        muted: withVar('muted'),
+        rule: withVar('rule'),
+        accent: withVar('accent'),
+        'accent-soft': withVar('accent-soft'),
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
       },
     },
   },
   plugins: [],
-}
-
+};

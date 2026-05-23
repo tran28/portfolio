@@ -1,5 +1,10 @@
-export const intro = { 
-    name: "Matthew Tran",
-    title: "Software Engineer",
-    tagline: 'Striving to create memorable digital experiences, rather than "just another product".'
-}
+export const intro = {
+  name: 'Matthew Tran',
+  role: 'Software Engineer',
+  tagline: {
+    line1: 'Building memorable experiences.',
+    line2: 'Not just another product.',
+  },
+  location: 'Toronto, ON',
+  year: new Date().getFullYear(),
+};

@@ -1,11 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Light — warm cream paper, deep walnut ink, olive accent */
+    --paper: 238 232 220;     /* #eee8dc — bone */
+    --surface: 230 222 207;   /* #e6decf — recessed surface */
+    --ink: 28 26 24;          /* #1c1a18 — near-black warm */
+    --muted: 110 99 84;       /* #6e6354 — olive-grey */
+    --rule: 198 186 165;      /* #c6baa5 — hairline */
+    --accent: 92 96 56;       /* #5c6038 — moss/olive */
+    --accent-soft: 209 209 175; /* #d1d1af — accent tint */
+  }
+  html.dark {
+    /* Dark — deep walnut, warm cream text, terracotta accent */
+    --paper: 22 20 18;        /* #161412 */
+    --surface: 32 28 25;      /* #201c19 */
+    --ink: 237 228 211;       /* #ede4d3 */
+    --muted: 150 134 113;     /* #968671 */
+    --rule: 64 56 48;         /* #403830 */
+    --accent: 184 153 104;    /* #b89968 — warm sand */
+    --accent-soft: 60 50 36;  /* #3c3224 */
+  }
+
+  /* Local theme inversion. Swaps paper/ink/muted/rule so any descendant
+     using `bg-paper`, `text-ink`, etc. automatically reads the inverted
+     value. Accent stays the same so the brand color carries across. */
+  .invert-theme {
+    --paper: 22 20 18;
+    --surface: 32 28 25;
+    --ink: 237 228 211;
+    --muted: 150 134 113;
+    --rule: 64 56 48;
+  }
+  html.dark .invert-theme {
+    --paper: 38 34 30;        /* one notch above page paper, not full cream */
+    --surface: 48 42 36;
+    --ink: 230 222 205;
+    --muted: 150 138 118;
+    --rule: 72 64 54;
+  }
+
+  html,
   body {
-    @apply bg-primary-dark leading-relaxed text-primary-dim antialiased selection:bg-accent-1 selection:text-accent-2
+    @apply bg-paper text-ink antialiased;
+    font-family: theme('fontFamily.sans');
+    transition:
+      background-color 400ms ease,
+      color 400ms ease;
+  }
+  body {
+    @apply selection:bg-ink selection:text-paper;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    body,
+    a,
+    button {
+      cursor: none;
+    }
+  }
+}
+
+@layer utilities {
+  /* Dynamic viewport height: accounts for Safari/Chrome mobile toolbars
+     that expand and contract on scroll. Falls back to 100vh on browsers
+     that don't support `dvh`. */
+  .hero-vh {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+
+  .text-display {
+    font-family: theme('fontFamily.display');
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 0.95;
+  }
+  .text-mono {
+    font-family: theme('fontFamily.mono');
+    font-feature-settings: 'ss01', 'ss02';
+  }
+  .hairline {
+    border-color: rgb(var(--rule));
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Editorial drop cap — first letter of the immediate child */
+  .dropcap > p:first-of-type::first-letter {
+    font-family: theme('fontFamily.display');
+    font-style: italic;
+    font-weight: 400;
+    font-size: 4.5em;
+    line-height: 0.85;
+    float: left;
+    padding: 0.05em 0.12em 0 0;
+    color: rgb(var(--accent));
+  }
+
+  /* Hover underline draw */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    transition: background-size 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Breathing dot */
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.45; transform: scale(0.85); }
+  }
+  .pulse-dot {
+    animation: pulse-dot 2.4s ease-in-out infinite;
   }
 }
