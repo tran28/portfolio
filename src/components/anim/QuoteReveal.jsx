@@ -10,11 +10,37 @@ const EASE = [0.16, 1, 0.3, 1];
  *   - A hairline draws under the quote
  *   - Attribution fades up last
  *
- * The body wraps naturally to its container, so this scales from
- * narrow mobile columns up to ultrawide without hardcoded line breaks.
+ * `segments` is an array of `{ text, italic?: boolean, className?: string }`.
+ * Use `italic: true` for inline italic emphasis (e.g. reported speech inside a
+ * quote). `className` lets the caller restyle a specific segment (e.g. an
+ * accent color for the italic phrase).
+ *
+ * For backward compatibility, `text` can be passed as a single string.
  */
-export function QuoteReveal({ text, attribution, className = '', accentClassName = 'text-accent' }) {
-  const words = text.split(' ');
+export function QuoteReveal({
+  text,
+  segments,
+  attribution,
+  className = '',
+  quoteClassName = 'text-accent',
+}) {
+  const items = segments ?? [{ text: text ?? '' }];
+
+  // Flatten to a word stream for staggered animation, tracking which segment
+  // each word belongs to so we can apply per-segment styling.
+  const words = [];
+  items.forEach((seg, segIdx) => {
+    const parts = seg.text.split(' ').filter(Boolean);
+    parts.forEach((w, wIdx) => {
+      words.push({
+        word: w,
+        segIdx,
+        first: wIdx === 0,
+        last: wIdx === parts.length - 1,
+      });
+    });
+  });
+
   const lastWordIdx = words.length - 1;
   const baseDelay = 0.35;
   const wordStep = 0.045;
@@ -27,7 +53,10 @@ export function QuoteReveal({ text, attribution, className = '', accentClassName
       viewport={{ once: true, amount: 0.3 }}
       className={className}
     >
-      <blockquote className={`text-display ${accentClassName}`} aria-label={text}>
+      <blockquote
+        className={`text-display ${quoteClassName}`}
+        aria-label={items.map((s) => s.text).join(' ')}
+      >
         {/* Opening mark */}
         <motion.span
           variants={{
@@ -35,36 +64,44 @@ export function QuoteReveal({ text, attribution, className = '', accentClassName
             shown: { opacity: 0.6, scale: 1, y: 0 },
           }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
-          className="inline-block leading-none"
+          className="inline-block leading-none text-accent"
           aria-hidden="true"
         >
           &ldquo;
         </motion.span>
 
         {/* Words */}
-        {words.map((word, i) => (
-          <span
-            key={i}
-            className="inline-block overflow-hidden align-bottom"
-            style={{ lineHeight: 1, clipPath: 'inset(-30% -5% -25% -5%)' }}
-          >
-            <motion.span
-              className="inline-block"
-              variants={{
-                hidden: { y: '105%' },
-                shown: { y: '0%' },
-              }}
-              transition={{
-                duration: 0.9,
-                ease: EASE,
-                delay: baseDelay + i * wordStep,
+        {words.map((w, i) => {
+          const seg = items[w.segIdx];
+          const italicClass = seg.italic ? 'italic' : '';
+          const segClass = seg.className ?? '';
+          return (
+            <span
+              key={i}
+              className={`inline-block overflow-hidden align-bottom ${italicClass} ${segClass}`}
+              style={{
+                lineHeight: 1,
+                clipPath: 'inset(-30% -5% -25% -5%)',
+                marginRight: i === lastWordIdx ? 0 : '0.18em',
               }}
             >
-              {word}
-              {i !== lastWordIdx ? ' ' : ''}
-            </motion.span>
-          </span>
-        ))}
+              <motion.span
+                className="inline-block"
+                variants={{
+                  hidden: { y: '105%' },
+                  shown: { y: '0%' },
+                }}
+                transition={{
+                  duration: 0.9,
+                  ease: EASE,
+                  delay: baseDelay + i * wordStep,
+                }}
+              >
+                {w.word}
+              </motion.span>
+            </span>
+          );
+        })}
 
         {/* Closing mark */}
         <motion.span
@@ -73,7 +110,7 @@ export function QuoteReveal({ text, attribution, className = '', accentClassName
             shown: { opacity: 0.6, scale: 1 },
           }}
           transition={{ duration: 0.9, ease: EASE, delay: tailDelay + 0.1 }}
-          className="inline-block"
+          className="inline-block text-accent"
           aria-hidden="true"
         >
           &rdquo;

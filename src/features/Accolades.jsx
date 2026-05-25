@@ -12,7 +12,7 @@ export function Accolades() {
             <em className="italic text-accent">Recognition.</em>
           </h2>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted">
-            Cool things that made me happy.
+            Things I&apos;m proud of.
           </p>
         </Reveal>
 

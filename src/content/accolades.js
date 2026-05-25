@@ -9,7 +9,7 @@ export const accolades = [
     image: 'https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/LSO_award.png',
     title: 'Life Sciences Ontario Scholarship',
     href: 'https://lifesciencesontario.ca/2019-scholarship-winners/',
-    description: 'For academic achievement and community service. Sponsored by Mississauga Board of Trade.',
+    description: 'For academic achievement. Sponsored by Mississauga Board of Trade.',
   },
   {
     image: 'https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/LinkedIn_Learning.png',
