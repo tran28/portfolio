@@ -11,7 +11,7 @@ export const design = {
     },
     {
       title: 'Websites',
-      body: 'Marketing sites and storefronts, designed and built end-to-end. Fast, accessible, easy to update.',
+      body: 'Marketing sites, storefronts, portfolios, and web apps, designed and built end-to-end. Fast, accessible, easy to update.',
     },
     {
       title: 'Design systems',
