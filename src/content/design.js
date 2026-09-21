@@ -37,7 +37,7 @@ export const design = {
       slug: 'nice-hair-salon',
       title: 'Nice Hair Salon',
       client: 'Nice Hair Salon',
-      year: '2024',
+      year: '2026',
       role: 'Design and build',
       summary:
         'A storefront site for a local salon. Warm type, a simple booking path, and photography that does most of the talking. Designed directly in the browser and built in Next.js.',
