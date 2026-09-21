@@ -95,9 +95,30 @@ function CaseStudy({ study, index }) {
         target="_blank"
         rel="noreferrer noopener"
         aria-label={`${study.title} (opens in new tab)`}
-        className="group/arrow block"
+        className="group/arrow grid grid-cols-12 items-start gap-8 lg:gap-6"
       >
-        <figure className="overflow-hidden rounded-sm bg-surface p-4 md:p-10 lg:p-16">
+        <div className="col-span-12 lg:col-span-4">
+          <span className="text-mono block text-[11px] uppercase tracking-[0.18em] text-muted tabular-nums">
+            {n}
+          </span>
+          <h2 className="text-display mt-3 inline-flex items-baseline gap-3 text-4xl leading-none lg:text-5xl">
+            {study.title}
+            <Arrow dir="ne" size={18} className="text-muted" />
+          </h2>
+
+          <dl className="text-mono mt-8 grid grid-cols-3 gap-4 text-[11px] uppercase tracking-[0.18em] lg:grid-cols-1 lg:gap-5">
+            <Meta label="Client" value={study.client} />
+            <Meta label="Year" value={study.year} />
+            <Meta label="Role" value={study.role} />
+          </dl>
+
+          <p className="mt-8 max-w-sm text-base leading-relaxed text-ink/80">{study.summary}</p>
+          <p className="text-mono mt-4 text-[11px] tracking-[0.06em] text-muted">
+            {study.tags.join(' · ')}
+          </p>
+        </div>
+
+        <figure className="col-span-12 overflow-hidden rounded-sm bg-surface p-4 md:p-8 lg:col-span-8">
           <div className="aspect-[16/10] w-full overflow-hidden">
             <img
               src={study.image}
@@ -107,31 +128,6 @@ function CaseStudy({ study, index }) {
             />
           </div>
         </figure>
-
-        <div className="mt-10 grid grid-cols-12 gap-6 md:mt-12">
-          <div className="col-span-12 lg:col-span-5">
-            <span className="text-mono block text-[11px] uppercase tracking-[0.18em] text-muted tabular-nums">
-              {n}
-            </span>
-            <h2 className="text-display mt-3 inline-flex items-baseline gap-3 text-4xl leading-none lg:text-5xl">
-              {study.title}
-              <Arrow dir="ne" size={18} className="text-muted" />
-            </h2>
-          </div>
-
-          <dl className="text-mono col-span-12 grid grid-cols-3 gap-4 text-[11px] uppercase tracking-[0.18em] lg:col-span-3">
-            <Meta label="Client" value={study.client} />
-            <Meta label="Year" value={study.year} />
-            <Meta label="Role" value={study.role} />
-          </dl>
-
-          <div className="col-span-12 lg:col-span-4">
-            <p className="text-base leading-relaxed text-ink/80">{study.summary}</p>
-            <p className="text-mono mt-4 text-[11px] tracking-[0.06em] text-muted">
-              {study.tags.join(' · ')}
-            </p>
-          </div>
-        </div>
       </a>
     </Reveal>
   );
