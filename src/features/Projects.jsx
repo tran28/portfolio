@@ -5,11 +5,11 @@ import { projects } from '../content/projects';
 
 export function Projects() {
   return (
-    <Section id="projects" number="03" label="Projects" ariaLabel="Projects">
+    <Section id="projects" number="03" label="Projects" ariaLabel="Selected projects">
       <div className="grid grid-cols-12 items-start gap-6">
         <div className="col-span-12 self-start lg:sticky lg:top-24 lg:col-span-4">
           <h2 className="text-display text-[10vw] leading-[0.95] lg:text-[5vw] 2xl:text-[80px]">
-            <em className="italic text-accent">Projects.</em>
+            Things I&apos;ve <em className="italic text-accent">built.</em>
           </h2>
         </div>
 

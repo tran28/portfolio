@@ -21,7 +21,7 @@ export function Contact() {
     <Section id="contact" number="05" label="Contact" ariaLabel="Get in touch">
       <Reveal>
         <h2 className="text-display max-w-4xl text-[12vw] leading-[1.02] sm:text-[10vw] lg:text-[7vw] 2xl:text-[112px]">
-          <em className="italic text-accent">Get in touch.</em>
+          Let&apos;s build <span className="italic text-accent">something meaningful.</span>
         </h2>
       </Reveal>
 

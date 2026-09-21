@@ -2,6 +2,13 @@ import { Section } from '../components/ui/Section';
 import { Reveal } from '../components/anim/Reveal';
 import { about } from '../content/about';
 
+const QUOTE = {
+  lead: 'Some people say,',
+  emphasis: 'give the customers what they want.',
+  tail: "But that's not my approach. Our job is to figure out what they're going to want before they do.",
+  attribution: 'Steve Jobs',
+};
+
 const META = [
   { label: 'Based in', value: 'Toronto, ON' },
   { label: 'Focus', value: 'Product engineering' },
@@ -9,14 +16,17 @@ const META = [
 ];
 
 export function About() {
-  const { statement, paragraphs } = about;
+  const { paragraphs } = about;
 
   return (
     <Section id="about" number="01" label="About" ariaLabel="About me">
       <div className="grid grid-cols-12 gap-6">
         <Reveal className="col-span-12 lg:col-span-10">
-          <p className="text-display text-3xl leading-[1.15] text-ink sm:text-4xl md:text-5xl lg:text-[3.4vw] 2xl:text-[56px]">
-            {statement.lead} <span className="italic text-accent">{statement.emphasis}</span>
+          <blockquote className="text-display text-3xl leading-[1.15] text-ink sm:text-4xl md:text-5xl lg:text-[3.4vw] 2xl:text-[56px]">
+            {QUOTE.lead} <span className="italic text-accent">{QUOTE.emphasis}</span> {QUOTE.tail}
+          </blockquote>
+          <p className="text-mono mt-6 text-[11px] uppercase tracking-[0.18em] text-muted">
+            {QUOTE.attribution}
           </p>
         </Reveal>
       </div>

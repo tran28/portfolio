@@ -1,10 +1,6 @@
 export const about = {
-  statement: {
-    lead: 'Good software is mostly small decisions,',
-    emphasis: 'made carefully.',
-  },
   paragraphs: [
-    "I'm a software engineer at Postilize, working across the stack on automation for professional services firms. Most of my attention goes to the frontend: how things load, respond, and settle. I like the unglamorous work of getting those details right.",
-    'Before this I taught web development at Lighthouse Labs and co-founded a small consumer products company. Outside of work I travel when I can.',
+    "I'm drawn to the small moments that make a product feel right. The pause before a button responds, the way a layout settles after a scroll, the friction that quietly disappears. I like building those moments, and I like the engineering it takes to make them feel effortless.",
+    "Outside of work, I travel as often as I can. I'd rather see the world than just a screen.",
   ],
 };
