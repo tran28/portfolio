@@ -40,7 +40,7 @@ export const experiences = [
     titles: ['Lead Site Coordinator', 'Operations Coordinator', 'Finance Coordinator'],
     company: "Let's Talk Science",
     href: 'https://letstalkscience.ca/',
-    description: 'Filed 50+ bug reports on a new volunteer portal. Led a team of three.',
+    description: 'Led a team of three.',
     skills: ['Leadership', 'Project Management', 'Documentation'],
     technologies: ['Google Suite', 'MailChimp'],
   },
