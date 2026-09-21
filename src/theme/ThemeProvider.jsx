@@ -3,50 +3,23 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 const ThemeContext = createContext(null);
 const STORAGE_KEY = 'mt-theme';
 
+// Light is the default regardless of system preference; a toggle pick persists.
 function readStored() {
-  if (typeof window === 'undefined') return null;
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored === 'light' || stored === 'dark' ? stored : null;
-}
-
-function readSystem() {
   if (typeof window === 'undefined') return 'light';
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  return stored === 'dark' ? 'dark' : 'light';
 }
 
 export function ThemeProvider({ children }) {
-  // null = follow system, 'light'/'dark' = user pick
-  const [userPref, setUserPref] = useState(readStored);
-  const [systemTheme, setSystemTheme] = useState(readSystem);
+  const [theme, setTheme] = useState(readStored);
 
-  // Watch system theme; only matters while user hasn't picked.
-  useEffect(() => {
-    const mql = window.matchMedia('(prefers-color-scheme: dark)');
-    const update = () => setSystemTheme(mql.matches ? 'dark' : 'light');
-    mql.addEventListener('change', update);
-    return () => mql.removeEventListener('change', update);
-  }, []);
-
-  const theme = userPref ?? systemTheme;
-
-  // Apply theme class and persist user pick.
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
+    window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  useEffect(() => {
-    if (userPref === null) {
-      window.localStorage.removeItem(STORAGE_KEY);
-    } else {
-      window.localStorage.setItem(STORAGE_KEY, userPref);
-    }
-  }, [userPref]);
-
   const toggle = useCallback(() => {
-    setUserPref((curr) => {
-      const current = curr ?? readSystem();
-      return current === 'dark' ? 'light' : 'dark';
-    });
+    setTheme((curr) => (curr === 'dark' ? 'light' : 'dark'));
   }, []);
 
   const value = useMemo(() => ({ theme, toggle }), [theme, toggle]);
