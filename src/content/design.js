@@ -7,7 +7,7 @@ export const design = {
   services: [
     {
       title: 'Product design',
-      body: 'Flows, wireframes, and high-fidelity screens in Figma. From a brief to something a team can build.',
+      body: 'Flows, layouts, and finished screens. From a brief to something a team can build.',
     },
     {
       title: 'Websites',
@@ -38,10 +38,10 @@ export const design = {
       year: '2024',
       role: 'Product design',
       summary:
-        'SMS discount alerts for small retailers. The design work covered the onboarding flow, the campaign composer, and a small component set, all in Figma before any code.',
+        'SMS discount alerts for small retailers. The design covered the dashboard, the onboarding flow, and a small component set, worked out before any code.',
       image: '/design/notif.png',
       href: 'https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design',
-      tags: ['Figma', 'Design system', 'Prototyping'],
+      tags: ['Product design', 'React', 'Tailwind'],
     },
   ],
 };
