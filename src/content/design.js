@@ -27,7 +27,7 @@ export const design = {
       year: '2026',
       role: 'Design and build',
       summary:
-        'A macOS menu-bar app that turns the MacBook notch into a Dynamic Island: now playing, calendar, timer, and volume. Most of the design work is in the motion, from the springs and morphs to the way the shape puffs on hover.',
+        'A Dynamic Island for macOS. Cove lives in the MacBook notch and expands into now playing, calendar, timer, and volume controls. Most of the design work is in the motion: the springs, the morphs, and the way the shape swells on hover.',
       image: '/design/cove.jpg',
       video: '/design/cove.mp4',
       href: 'https://github.com/tran28/notch-app',
