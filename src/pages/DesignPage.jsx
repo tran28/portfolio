@@ -120,12 +120,26 @@ function CaseStudy({ study, index }) {
 
         <figure className="col-span-12 overflow-hidden rounded-sm bg-surface p-4 md:p-8 lg:col-span-8">
           <div className="aspect-[16/10] w-full overflow-hidden">
-            <img
-              src={study.image}
-              alt={`${study.title} interface`}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover/arrow:scale-[1.015]"
-            />
+            {study.video ? (
+              <video
+                src={study.video}
+                poster={study.image}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label={`${study.title} in motion`}
+                className="h-full w-full object-cover object-top"
+              />
+            ) : (
+              <img
+                src={study.image}
+                alt={`${study.title} interface`}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover/arrow:scale-[1.015]"
+              />
+            )}
           </div>
         </figure>
       </a>

@@ -1,5 +1,6 @@
 // Case studies for /design. Add entries here; the page renders them in order.
 // `image` should be a wide screenshot or composition (around 16:10 works best).
+// Optional `video` (mp4) plays muted on loop with `image` as its poster.
 export const design = {
   statement: 'Interfaces, identities, and the systems behind them.',
   availability: 'Available for freelance and contract work.',
@@ -28,6 +29,7 @@ export const design = {
       summary:
         'A macOS menu-bar app that turns the MacBook notch into a Dynamic Island: now playing, calendar, timer, and volume. Most of the design work is in the motion, from the springs and morphs to the way the shape puffs on hover.',
       image: '/design/cove.webp',
+      video: '/design/cove.mp4',
       href: 'https://github.com/tran28/notch-app',
       tags: ['Swift', 'SwiftUI', 'macOS', 'Motion design'],
     },
