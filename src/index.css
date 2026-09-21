@@ -60,15 +60,6 @@
     width: 0;
     height: 0;
   }
-
-  @media (hover: hover) and (pointer: fine) {
-    html,
-    body,
-    a,
-    button {
-      cursor: none;
-    }
-  }
 }
 
 @layer utilities {

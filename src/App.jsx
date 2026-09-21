@@ -1,6 +1,5 @@
 import { Hud } from './components/Hud';
 import { Footer } from './components/Footer';
-import { MagneticCursor } from './components/MagneticCursor';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { Hero } from './features/Hero';
 import { About } from './features/About';
@@ -26,7 +25,6 @@ export default function App() {
           <Contact />
           <Footer />
         </main>
-        <MagneticCursor />
       </div>
     </ThemeProvider>
   );
