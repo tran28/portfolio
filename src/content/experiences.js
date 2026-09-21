@@ -1,7 +1,7 @@
 export const experiences = [
   {
     dateSpan: '2024 - Now',
-    titles: ['Software Engineer'],
+    titles: ['Software Engineer, Product'],
     company: 'Postilize',
     href: 'https://www.postilize.com/',
     description: 'Building automation for law, accounting, and consulting firms at an early-stage startup.',
