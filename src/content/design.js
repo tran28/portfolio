@@ -39,7 +39,7 @@ export const design = {
       role: 'Product design',
       summary:
         'SMS discount alerts for small retailers. The design work covered the onboarding flow, the campaign composer, and a small component set, all in Figma before any code.',
-      image: '/design/notif.webp',
+      image: '/design/notif.png',
       href: 'https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design',
       tags: ['Figma', 'Design system', 'Prototyping'],
     },
