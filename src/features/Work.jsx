@@ -14,9 +14,6 @@ export function Work() {
           <h2 className="text-display text-[10vw] leading-[0.95] lg:text-[5vw] 2xl:text-[80px]">
             Selected <em className="italic text-accent">work.</em>
           </h2>
-          <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted">
-            A few contributions here and there.
-          </p>
         </div>
 
         <ol className="col-span-12 lg:col-span-7 lg:col-start-6">
@@ -51,13 +48,8 @@ function useCoarsePointer() {
 function ExperienceRow({ exp, index, isOpen, onOpen, onToggle }) {
   const coarse = useCoarsePointer();
 
-  /**
-   * Touch (coarse pointer): the row is a <button> that toggles open/closed.
-   * The "Visit ↗" link inside the expanded body handles navigation.
-   *
-   * Mouse (fine pointer): the row is an <a> that opens the link on click.
-   * Hover/focus expands the row (existing behavior).
-   */
+  // Touch: the row toggles open/closed and a Visit link handles navigation.
+  // Mouse: the row is a link; hover/focus expands it.
   const rowProps = coarse
     ? { as: 'button', type: 'button', onClick: onToggle, 'aria-expanded': isOpen }
     : {
@@ -65,44 +57,41 @@ function ExperienceRow({ exp, index, isOpen, onOpen, onToggle }) {
         href: exp.href,
         target: '_blank',
         rel: 'noreferrer noopener',
-        'data-cursor': 'visit',
         onMouseEnter: onOpen,
         onFocus: onOpen,
         'aria-expanded': isOpen,
         'aria-label': `${exp.company} (opens in new tab)`,
       };
   const { as: RowTag, ...rest } = rowProps;
+  const stack = [...exp.skills, ...exp.technologies].join(' · ');
 
   return (
-    <Reveal as="li" delay={0.05 * index} amount={0.1}>
+    <Reveal as="li" delay={0.04 * index} amount={0.1}>
       <RowTag
         {...rest}
-        className="group/arrow hairline block w-full border-t text-left transition-colors"
+        className={`group/arrow hairline block w-full border-t text-left transition-colors duration-300 ${
+          isOpen ? 'text-ink' : 'text-ink/60 hover:text-ink'
+        }`}
       >
-        <div className="flex items-baseline gap-4 py-6">
-          <span className="text-mono w-8 shrink-0 text-[10px] text-muted tabular-nums">
-            {String(index + 1).padStart(2, '0')}
+        <div className="flex items-baseline justify-between gap-6 py-6">
+          <span className="text-display text-3xl leading-none lg:text-4xl">
+            {exp.company}
+            <span className="mt-2 block text-base italic text-muted lg:ml-3 lg:mt-0 lg:inline">
+              {exp.titles[0]}
+            </span>
           </span>
-          <span className="flex flex-1 items-baseline justify-between gap-4">
-            <span className="text-display text-3xl leading-none lg:text-4xl">
-              {exp.company}
-              <span className="ml-3 text-sm italic text-muted">/ {exp.titles[0]}</span>
-            </span>
-            <span className="text-mono inline-flex shrink-0 items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-muted">
-              {exp.dateSpan}
-              {coarse ? (
-                <span
-                  aria-hidden="true"
-                  className={`text-accent transition-transform duration-300 ${
-                    isOpen ? 'rotate-45' : ''
-                  }`}
-                >
-                  +
-                </span>
-              ) : (
-                <Arrow dir="ne" className="text-accent" />
-              )}
-            </span>
+          <span className="text-mono inline-flex shrink-0 items-center gap-3 text-[11px] uppercase tracking-[0.18em] text-muted">
+            {exp.dateSpan}
+            {coarse ? (
+              <span
+                aria-hidden="true"
+                className={`transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}
+              >
+                +
+              </span>
+            ) : (
+              <Arrow dir="ne" size={14} />
+            )}
           </span>
         </div>
 
@@ -111,25 +100,14 @@ function ExperienceRow({ exp, index, isOpen, onOpen, onToggle }) {
           style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
         >
           <div className="overflow-hidden">
-            <div className="grid grid-cols-12 gap-6 pb-8 pl-12">
+            <div className="grid grid-cols-12 gap-6 pb-8">
               <p className="col-span-12 max-w-xl text-base leading-relaxed text-ink/80 lg:col-span-7">
                 {exp.description}
               </p>
               <div className="col-span-12 flex flex-col gap-3 lg:col-span-4 lg:col-start-9">
-                <div className="text-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                  Stack
-                </div>
-                <ul className="flex flex-wrap gap-x-3 gap-y-1.5">
-                  {[...exp.skills, ...exp.technologies].map((t) => (
-                    <li
-                      key={t}
-                      className="text-mono inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-ink/70"
-                    >
-                      <span aria-hidden="true" className="text-accent">·</span>
-                      {t}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-mono text-[11px] leading-relaxed tracking-[0.06em] text-muted">
+                  {stack}
+                </p>
                 {coarse && (
                   <a
                     href={exp.href}
@@ -139,7 +117,7 @@ function ExperienceRow({ exp, index, isOpen, onOpen, onToggle }) {
                     onClick={(e) => e.stopPropagation()}
                   >
                     Visit {exp.company}
-                    <Arrow dir="ne" size={14} className="text-accent" />
+                    <Arrow dir="ne" size={14} />
                   </a>
                 )}
               </div>
