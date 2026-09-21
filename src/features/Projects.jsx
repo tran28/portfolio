@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Section } from '../components/ui/Section';
 import { Reveal } from '../components/anim/Reveal';
 import { Arrow } from '../components/ui/Arrow';
@@ -11,6 +12,12 @@ export function Projects() {
           <h2 className="text-display text-[10vw] leading-[0.95] lg:text-[5vw] 2xl:text-[80px]">
             Things I&apos;ve <em className="italic text-accent">built.</em>
           </h2>
+          <Link
+            to="/design"
+            className="group/arrow link-underline mt-8 inline-flex items-center gap-2 text-sm text-muted transition-colors duration-300 hover:text-ink"
+          >
+            Design work <Arrow dir="e" size={14} />
+          </Link>
         </div>
 
         <ol className="col-span-12 lg:col-span-7 lg:col-start-6">
