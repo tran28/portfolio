@@ -4,7 +4,7 @@ import { intro } from '../content/intro';
 
 const SECTIONS = [
   { id: 'about', label: 'About' },
-  { id: 'work', label: 'Work' },
+  { id: 'work', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'accolades', label: 'Recognition' },
   { id: 'contact', label: 'Contact' },

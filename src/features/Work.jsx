@@ -8,11 +8,11 @@ export function Work() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <Section id="work" number="02" label="Work" ariaLabel="Selected work">
+    <Section id="work" number="02" label="Experience" ariaLabel="Experience">
       <div className="grid grid-cols-12 items-start gap-6">
         <div className="col-span-12 self-start lg:sticky lg:top-24 lg:col-span-4">
           <h2 className="text-display text-[10vw] leading-[0.95] lg:text-[5vw] 2xl:text-[80px]">
-            Selected <em className="italic text-accent">work.</em>
+            <em className="italic text-accent">Experience.</em>
           </h2>
         </div>
 
