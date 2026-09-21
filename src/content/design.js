@@ -52,7 +52,7 @@ export const design = {
       year: '2024',
       role: 'Product design',
       summary:
-        'SMS discount alerts for small retailers. The design covered the dashboard, the onboarding flow, and a small component set, worked out before any code.',
+        'SMS alerts when a product you are watching drops in price. The design covered the dashboard, the onboarding flow, and a small component set, worked out before any code.',
       image: '/design/notif.png',
       href: 'https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design',
       tags: ['Product design', 'React', 'Tailwind'],
