@@ -26,10 +26,10 @@ export const design = {
       year: '2024',
       role: 'Design and build',
       summary:
-        'A storefront site for a local salon. Warm type, a simple booking path, and photography that does most of the talking. Designed in Figma and built in Next.js.',
+        'A storefront site for a local salon. Warm type, a simple booking path, and photography that does most of the talking. Designed directly in the browser and built in Next.js.',
       image: 'https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_nicehairsalon.png',
       href: 'https://nicehairsalon.ca/',
-      tags: ['Figma', 'Next.js', 'Tailwind'],
+      tags: ['Next.js', 'Tailwind'],
     },
     {
       slug: 'notif',
@@ -39,7 +39,7 @@ export const design = {
       role: 'Product design',
       summary:
         'SMS discount alerts for small retailers. The design work covered the onboarding flow, the campaign composer, and a small component set, all in Figma before any code.',
-      image: 'https://matthew-tran-portfolio.s3.us-east-2.amazonaws.com/image_notifproject.png',
+      image: '/design/notif.webp',
       href: 'https://www.figma.com/file/ynjeCPct7udkLBg1YJBxmu/NotifProject?type=design&node-id=0-1&mode=design',
       tags: ['Figma', 'Design system', 'Prototyping'],
     },
