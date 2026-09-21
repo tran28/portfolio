@@ -4,7 +4,7 @@ export const experiences = [
     titles: ['Software Engineer, Product'],
     company: 'Postilize',
     href: 'https://www.postilize.com/',
-    description: 'Building automation for law, accounting, and consulting firms at an early-stage startup.',
+    description: 'Build AI-powered tools for law firms to engage in business outreach and manage client relationships.',
     skills: ['System Design', 'Software Testing'],
     technologies: ['JavaScript', 'React', 'Express', 'MongoDB'],
   },
