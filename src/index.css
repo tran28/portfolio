@@ -34,12 +34,16 @@
   body {
     @apply selection:bg-ink selection:text-paper;
   }
-  /* Theme switches are instant: hover transition-colors would otherwise fade some elements,
-     and iOS 26 Safari tints its bars from the page background without resampling after a fade. */
+  /* The theme fade comes from the view transition (ThemeProvider), not per-element transitions. */
   html.theme-switching *,
   html.theme-switching *::before,
   html.theme-switching *::after {
     transition: none !important;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 400ms;
+    animation-timing-function: ease;
   }
 
   ::-webkit-scrollbar {
