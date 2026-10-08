@@ -16,6 +16,12 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
     window.localStorage.setItem(STORAGE_KEY, theme);
+
+    // Safari tints its top bar from theme-color, which index.html pins to the light paper.
+    // Read the var, not body's background, which is still mid-transition here.
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const paper = getComputedStyle(document.documentElement).getPropertyValue('--paper').trim();
+    if (meta && paper) meta.setAttribute('content', `rgb(${paper})`);
   }, [theme]);
 
   const toggle = useCallback(() => {

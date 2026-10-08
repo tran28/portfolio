@@ -4,6 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#eee8dc" />
+    <!-- Apply a stored dark pick before first paint; ThemeProvider takes over once React mounts.
+         #161412 mirrors html.dark --paper in index.css. -->
+    <script>
+      try {
+        if (localStorage.getItem('mt-theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#161412');
+        }
+      } catch (e) {}
+    </script>
 
     <!-- Favicons (generated via realfavicongenerator.net) -->
     <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
