@@ -14,14 +14,16 @@ export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(readStored);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
+    const root = document.documentElement;
+    root.classList.add('theme-switching');
+    root.classList.toggle('dark', theme === 'dark');
+    // Reading a computed style flushes the new colors while transitions are still off.
+    const paper = getComputedStyle(document.body).backgroundColor;
+    root.classList.remove('theme-switching');
     window.localStorage.setItem(STORAGE_KEY, theme);
 
-    // Safari tints its top bar from theme-color, which index.html pins to the light paper.
-    // Read the var, not body's background, which is still mid-transition here.
-    const meta = document.querySelector('meta[name="theme-color"]');
-    const paper = getComputedStyle(document.documentElement).getPropertyValue('--paper').trim();
-    if (meta && paper) meta.setAttribute('content', `rgb(${paper})`);
+    // index.html pins theme-color to the light paper; browsers that still read it need the update.
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', paper);
   }, [theme]);
 
   const toggle = useCallback(() => {

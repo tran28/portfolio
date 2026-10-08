@@ -30,12 +30,16 @@
   body {
     @apply bg-paper text-ink antialiased;
     font-family: theme('fontFamily.sans');
-    transition:
-      background-color 400ms ease,
-      color 400ms ease;
   }
   body {
     @apply selection:bg-ink selection:text-paper;
+  }
+  /* Theme switches are instant: hover transition-colors would otherwise fade some elements,
+     and iOS 26 Safari tints its bars from the page background without resampling after a fade. */
+  html.theme-switching *,
+  html.theme-switching *::before,
+  html.theme-switching *::after {
+    transition: none !important;
   }
 
   ::-webkit-scrollbar {

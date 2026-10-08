@@ -10,7 +10,7 @@ export default function App() {
     <ThemeProvider>
       <BrowserRouter>
         <ScrollToTop />
-        <div className="relative bg-paper text-ink transition-colors duration-500">
+        <div className="relative bg-paper text-ink">
           <Hud />
           <Routes>
             <Route path="/" element={<HomePage />} />
